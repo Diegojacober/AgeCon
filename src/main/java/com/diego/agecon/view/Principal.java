@@ -80,6 +80,11 @@ public class Principal extends javax.swing.JFrame {
         jmiTipoContato.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiTipoContato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/diego/agecon/img/tipo.png"))); // NOI18N
         jmiTipoContato.setText("Tipo de contato");
+        jmiTipoContato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiTipoContatoActionPerformed(evt);
+            }
+        });
         jmCadastro.add(jmiTipoContato);
 
         jmArquivo.add(jmCadastro);
@@ -120,23 +125,29 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCidadeActionPerformed
-        CidadeView tela = new CidadeView();
+        FormPadrao tela = new CidadeView();
         jDesktop.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_jmiCidadeActionPerformed
 
     private void jmiContatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiContatosActionPerformed
-        ContatoView tela = new ContatoView();
+        FormPadrao tela = new ContatoView();
         jDesktop.add(tela);
         tela.setVisible(true);
         
     }//GEN-LAST:event_jmiContatosActionPerformed
 
     private void jmiBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBairroActionPerformed
-        BairroView tela = new BairroView();
+        FormPadrao tela = new BairroView();
         jDesktop.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_jmiBairroActionPerformed
+
+    private void jmiTipoContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiTipoContatoActionPerformed
+        FormPadrao tela = new TipoContatoView();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiTipoContatoActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

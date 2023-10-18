@@ -6,7 +6,7 @@ package com.diego.agecon.view;
 
 import javax.swing.*;
 
-public class FormPadrao extends javax.swing.JInternalFrame {
+abstract public class FormPadrao extends javax.swing.JInternalFrame {
     
     JLabel jlConsulta;
     JTextField jtfConsulta;
