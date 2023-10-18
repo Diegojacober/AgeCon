@@ -8,6 +8,9 @@ import javax.swing.*;
 
 abstract public class FormPadrao extends javax.swing.JInternalFrame {
     
+    //Metodos abstrados
+    abstract public void inicializarComponents();
+    
     JLabel jlConsulta;
     JTextField jtfConsulta;
 
@@ -17,6 +20,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         habilitarBotoes(true);
         jtfId.setEditable(false);
         habilitarCampos(false);
+        inicializarComponents();
         
         // jlabel - consulta
         jlConsulta = new JLabel("Consulta");
@@ -269,8 +273,8 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbNovo;
     private javax.swing.JButton jbSalvar;
     private javax.swing.JPanel jpnBUttons;
-    private javax.swing.JPanel jpnConsulta;
-    private javax.swing.JPanel jpnForm;
+    protected javax.swing.JPanel jpnConsulta;
+    protected javax.swing.JPanel jpnForm;
     private javax.swing.JTextField jtfDescricao;
     private javax.swing.JTextField jtfId;
     // End of variables declaration//GEN-END:variables

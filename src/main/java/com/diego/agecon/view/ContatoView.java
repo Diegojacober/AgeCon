@@ -13,4 +13,7 @@ public class ContatoView extends FormPadrao {
         setTitle("Cadastro de contatos");
     }
    
+    @Override
+    public void inicializarComponents() {
+    }
 }

@@ -12,4 +12,8 @@ public class TipoContatoView extends FormPadrao {
     public TipoContatoView() {
         setTitle("Cadastro de tipos de contato");
     }
+    
+    @Override
+    public void inicializarComponents() {
+    }
 }
