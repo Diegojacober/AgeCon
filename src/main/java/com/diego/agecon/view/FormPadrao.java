@@ -201,6 +201,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
         habilitarBotoes(false);
         habilitarCampos(true);
+        limparCampos();
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
@@ -237,6 +238,11 @@ public class FormPadrao extends javax.swing.JInternalFrame {
     
     public void habilitarCampos(boolean estado) {
         jtfDescricao.setEnabled(estado);
+    }
+    
+    public void limparCampos() {
+        jtfDescricao.setText("");
+        jtfId.setText("");
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
