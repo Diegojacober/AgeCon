@@ -202,6 +202,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         habilitarBotoes(false);
         habilitarCampos(true);
         limparCampos();
+        jtfDescricao.requestFocus();
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
