@@ -69,6 +69,11 @@ public class Principal extends javax.swing.JFrame {
         jmiBairro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jmiBairro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/diego/agecon/img/bairro.png"))); // NOI18N
         jmiBairro.setText("Bairro");
+        jmiBairro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiBairroActionPerformed(evt);
+            }
+        });
         jmCadastro.add(jmiBairro);
         jmCadastro.add(jSeparator3);
 
@@ -115,15 +120,23 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCidadeActionPerformed
-        // TODO add your handling code here:
+        CidadeView tela = new CidadeView();
+        jDesktop.add(tela);
+        tela.setVisible(true);
     }//GEN-LAST:event_jmiCidadeActionPerformed
 
     private void jmiContatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiContatosActionPerformed
-        FormPadrao tela = new FormPadrao();
+        ContatoView tela = new ContatoView();
         jDesktop.add(tela);
         tela.setVisible(true);
         
     }//GEN-LAST:event_jmiContatosActionPerformed
+
+    private void jmiBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBairroActionPerformed
+        BairroView tela = new BairroView();
+        jDesktop.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiBairroActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
