@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.diego.agecon.controller;
 
-/**
- *
- * @author ct67ca
- */
-public class TipoContatoController {
+import com.diego.agecon.interfaces.InterfaceController;
+
+public class TipoContatoController implements InterfaceController{
+
+    @Override
+    public void salvarController(Object... valor) {
+       
+    }
+
+    @Override
+    public void excluirController(Integer id) {
+        
+    }
+
+    @Override
+    public void loadComboBox() {
+        
+    }
     
 }
