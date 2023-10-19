@@ -1,19 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.diego.agecon.view;
 
-/**
- *
- * @author ct67ca
- */
+import com.diego.agecon.controller.TipoContatoController;
+
 public class TipoContatoView extends FormPadrao {
+    
+    TipoContatoController controller = new TipoContatoController();
+    
     public TipoContatoView() {
         setTitle("Cadastro de tipos de contato");
     }
     
     @Override
     public void inicializarComponents() {
+    }
+    
+    @Override
+    public void salvarView() {
+        controller.salvarController(jtfId.getText(), jtfDescricao.getText());
     }
 }

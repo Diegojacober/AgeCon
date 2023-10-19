@@ -16,4 +16,9 @@ public class ContatoView extends FormPadrao {
     @Override
     public void inicializarComponents() {
     }
+    
+    @Override
+    public void salvarView(){
+        
+    }
 }

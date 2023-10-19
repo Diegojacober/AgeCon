@@ -10,6 +10,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     
     //Metodos abstrados
     abstract public void inicializarComponents();
+    abstract public void salvarView();
     
     JLabel jlConsulta;
     JTextField jtfConsulta;
@@ -239,6 +240,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         habilitarBotoes(true);
         habilitarCampos(false);
+        salvarView();
     }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdActionPerformed
@@ -275,7 +277,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jpnBUttons;
     protected javax.swing.JPanel jpnConsulta;
     protected javax.swing.JPanel jpnForm;
-    private javax.swing.JTextField jtfDescricao;
-    private javax.swing.JTextField jtfId;
+    protected javax.swing.JTextField jtfDescricao;
+    protected javax.swing.JTextField jtfId;
     // End of variables declaration//GEN-END:variables
 }
