@@ -49,7 +49,13 @@ public class TipoContatoDAO implements InterfaceDAO{
     @Override
     public void consultarDao(Object... valor) throws SQLException {
         DefaultTableModel table = (DefaultTableModel) valor[1];
-        sql = "SELECT * FROM tipo_contato";
+        
+        if ("".equals((String) valor[0])) {
+            sql = "SELECT * FROM tipo_contato";
+        } else {
+            sql = "SELECT * FROM tipo_contato WHERE descricao LIKE '%" + valor[0] +"%'";
+        }
+        
         
         try {
             stmt = DBConnection.openConnection().prepareStatement(sql);

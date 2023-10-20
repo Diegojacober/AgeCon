@@ -38,4 +38,10 @@ public class TipoContatoView extends FormPadrao {
        model.setNumRows(0);
        controller.consultController(jtfConsulta.getText(), model);
     }
+    
+    @Override
+    public void updateForm() {
+      jtfId.setText(table.getValueAt(table.getSelectedRow(), 0).toString());
+      jtfDescricao.setText(table.getValueAt(table.getSelectedRow(), 1).toString());
+    }
 }

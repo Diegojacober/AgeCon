@@ -17,7 +17,7 @@ public class TipoContatoController implements InterfaceController{
         if ("".equals(valor[0])) {
             model.setId( (Integer) 0);
         } else {
-            model.setId( (Integer) valor[0]);
+            model.setId(Integer.parseInt(valor[0].toString()));
         }
         
         model.setDescricao((String) valor[1]);

@@ -51,4 +51,9 @@ public class CidadeView extends FormPadrao {
     public void consultaView() {
        
     }
+    
+    @Override
+    public void updateForm() {
+      
+    }
 }

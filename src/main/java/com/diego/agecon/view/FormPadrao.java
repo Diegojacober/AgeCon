@@ -5,6 +5,10 @@
 package com.diego.agecon.view;
 
 import com.diego.agecon.util.Table;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -15,6 +19,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     abstract public void salvarView();
     abstract public void createTable();
     abstract public void consultaView();
+    abstract public void updateForm();
     
     JLabel jlConsulta;
     JTextField jtfConsulta;
@@ -41,6 +46,24 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         jtfConsulta = new JTextField();
         jtfConsulta.setBounds(80, 10, 715, 25);
         jpnConsulta.add(jtfConsulta);
+        
+        jtfConsulta.addKeyListener(
+            new KeyAdapter() {
+                @Override
+                public void keyReleased(KeyEvent e) {
+                    consultaView();
+                }
+            }
+        );
+        
+        table.addMouseListener(
+            new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                updateForm();
+            }
+            }
+        );
     }
 
     @SuppressWarnings("unchecked")
@@ -191,7 +214,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
                 .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jpnConsulta.setBackground(new java.awt.Color(0, 204, 204));
+        jpnConsulta.setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout jpnConsultaLayout = new javax.swing.GroupLayout(jpnConsulta);
         jpnConsulta.setLayout(jpnConsultaLayout);
@@ -251,6 +274,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         habilitarBotoes(true);
         habilitarCampos(false);
         salvarView();
+        consultaView();
     }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdActionPerformed
