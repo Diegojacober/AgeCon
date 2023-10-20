@@ -41,4 +41,9 @@ public class CidadeView extends FormPadrao {
     public void salvarView(){
         
     }
+    
+    @Override
+    public void createTable() {
+        
+    }
 }

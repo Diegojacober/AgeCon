@@ -4,17 +4,25 @@
  */
 package com.diego.agecon.view;
 
+import com.diego.agecon.util.Table;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 abstract public class FormPadrao extends javax.swing.JInternalFrame {
     
     //Metodos abstrados
     abstract public void inicializarComponents();
     abstract public void salvarView();
+    abstract public void createTable();
     
     JLabel jlConsulta;
     JTextField jtfConsulta;
-
+    
+    JTable table;
+    DefaultTableModel model = new DefaultTableModel();
+    
+    Table utilTable = new Table();
+            
     public FormPadrao() {
         initComponents();
 
@@ -22,6 +30,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         jtfId.setEditable(false);
         habilitarCampos(false);
         inicializarComponents();
+        createTable();
         
         // jlabel - consulta
         jlConsulta = new JLabel("Consulta");
@@ -191,7 +200,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         );
         jpnConsultaLayout.setVerticalGroup(
             jpnConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 171, Short.MAX_VALUE)
+            .addGap(0, 272, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -209,7 +218,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpnForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpnConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpnConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
