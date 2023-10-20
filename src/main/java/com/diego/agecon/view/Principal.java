@@ -1,9 +1,12 @@
 package com.diego.agecon.view;
 
 import com.diego.agecon.dao.DBConnection;
+import com.diego.agecon.util.FormPosition;
 import javax.swing.JFrame;
 
 public class Principal extends javax.swing.JFrame {
+    
+    FormPosition formPosition = new FormPosition();
 
     public Principal() {
         initComponents();
@@ -126,28 +129,28 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCidadeActionPerformed
-        FormPadrao tela = new CidadeView();
-        jDesktop.add(tela);
-        tela.setVisible(true);
+        CidadeView screen;
+        formPosition.openForm(screen = new CidadeView(), jDesktop);
     }//GEN-LAST:event_jmiCidadeActionPerformed
 
     private void jmiContatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiContatosActionPerformed
-        FormPadrao tela = new ContatoView();
-        jDesktop.add(tela);
-        tela.setVisible(true);
+        ContatoView screen;
+        formPosition.openForm(screen = new ContatoView(), jDesktop);
         
     }//GEN-LAST:event_jmiContatosActionPerformed
 
     private void jmiBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBairroActionPerformed
-        FormPadrao tela = new BairroView();
-        jDesktop.add(tela);
-        tela.setVisible(true);
+        BairroView screen;
+        formPosition.openForm(screen = new BairroView(), jDesktop);
     }//GEN-LAST:event_jmiBairroActionPerformed
 
     private void jmiTipoContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiTipoContatoActionPerformed
-        FormPadrao tela = new TipoContatoView();
-        jDesktop.add(tela);
-        tela.setVisible(true);
+//        FormPadrao tela = new TipoContatoView();
+//        jDesktop.add(tela);
+//        tela.setVisible(true);
+        TipoContatoView screen;
+        formPosition.openForm(screen = new TipoContatoView(), jDesktop);
+        
     }//GEN-LAST:event_jmiTipoContatoActionPerformed
 
     public static void main(String args[]) {
