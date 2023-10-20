@@ -11,13 +11,12 @@ public class DBConnection {
     private static final String user = "dev";
     private static final String password = "123456";
     
-    public Connection openConnection() {
+    public static Connection openConnection() {
         Connection con = null;
         
         try {
             Class.forName(driverClass);
             con = (Connection) DriverManager.getConnection(url, user, password);
-            JOptionPane.showMessageDialog(null, "Conectado com sucesso");
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println(e.toString());

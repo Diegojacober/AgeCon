@@ -1,4 +1,4 @@
-package com.diego.agecon;
+package com.diego.agecon.model;
 
 public class TipoContatoModel {
     private Integer id;

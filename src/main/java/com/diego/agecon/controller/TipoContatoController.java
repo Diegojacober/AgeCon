@@ -1,6 +1,6 @@
 package com.diego.agecon.controller;
 
-import com.diego.agecon.TipoContatoModel;
+import com.diego.agecon.model.TipoContatoModel;
 import com.diego.agecon.dao.TipoContatoDAO;
 import com.diego.agecon.interfaces.InterfaceController;
 
