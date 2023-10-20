@@ -34,7 +34,7 @@ public class TipoContatoDAO implements InterfaceDAO{
             stmt.execute();
             stmt.close();
             
-            JOptionPane.showMessageDialog(null, "Inserido com sucesso: ");
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso: ");
         } catch(Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
         }
@@ -43,7 +43,19 @@ public class TipoContatoDAO implements InterfaceDAO{
 
     @Override
     public void excluirDao(Integer id) {
-       
+       sql = "DELETE FROM tipo_contato WHERE id_tipo_contato=?";
+       try {
+            stmt = DBConnection.openConnection().prepareStatement(sql);
+            
+            stmt.setInt(1, id);
+            
+            stmt.execute();
+            stmt.close();
+            
+            JOptionPane.showMessageDialog(null, "Deletado com sucesso: ");
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+        }
     }
 
     @Override

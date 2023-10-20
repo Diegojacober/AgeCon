@@ -51,6 +51,9 @@ public class BairroView extends FormPadrao {
     public void updateForm() {
       
     }
-    
-    
+
+    @Override
+    public void deleteView() {
+     
+    }
 }

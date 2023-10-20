@@ -44,4 +44,9 @@ public class TipoContatoView extends FormPadrao {
       jtfId.setText(table.getValueAt(table.getSelectedRow(), 0).toString());
       jtfDescricao.setText(table.getValueAt(table.getSelectedRow(), 1).toString());
     }
+
+    @Override
+    public void deleteView() {
+        controller.excluirController(Integer.parseInt(jtfId.getText()));
+    }
 }

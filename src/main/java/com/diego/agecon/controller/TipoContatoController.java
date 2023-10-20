@@ -26,7 +26,7 @@ public class TipoContatoController implements InterfaceController{
 
     @Override
     public void excluirController(Integer id) {
-        
+        dao.excluirDao(id);
     }
 
     @Override

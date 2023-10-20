@@ -20,6 +20,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     abstract public void createTable();
     abstract public void consultaView();
     abstract public void updateForm();
+    abstract public void deleteView();
     
     JLabel jlConsulta;
     JTextField jtfConsulta;
@@ -64,6 +65,17 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
             }
             }
         );
+        
+        // Evento de escuta para setas de cima e baixo
+        table.addKeyListener(
+            new KeyAdapter() {
+                @Override
+                public void keyReleased(KeyEvent e) {
+                    updateForm();
+                }
+            }
+        );
+
     }
 
     @SuppressWarnings("unchecked")
@@ -106,6 +118,11 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
 
         jbExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/diego/agecon/img/remove.png"))); // NOI18N
         jbExcluir.setText("Excluir");
+        jbExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluirActionPerformed(evt);
+            }
+        });
 
         jbSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/diego/agecon/img/salvar.png"))); // NOI18N
         jbSalvar.setText("Salvar");
@@ -280,6 +297,16 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfIdActionPerformed
+
+    private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
+        if (JOptionPane.showConfirmDialog(null, "Confirmar exclusão?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+           deleteView();
+           consultaView();
+           limparCampos();
+        } else {
+            JOptionPane.showMessageDialog(null, "Exclusão cancelada");
+        }
+    }//GEN-LAST:event_jbExcluirActionPerformed
 
     public void habilitarBotoes(boolean estado) {
         jbNovo.setEnabled(estado);

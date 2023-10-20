@@ -36,4 +36,9 @@ public class ContatoView extends FormPadrao {
     public void updateForm() {
       
     }
+    
+    @Override
+    public void deleteView() {
+     
+    }
 }

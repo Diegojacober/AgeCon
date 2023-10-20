@@ -56,4 +56,9 @@ public class CidadeView extends FormPadrao {
     public void updateForm() {
       
     }
+    
+    @Override
+    public void deleteView() {
+     
+    }
 }
