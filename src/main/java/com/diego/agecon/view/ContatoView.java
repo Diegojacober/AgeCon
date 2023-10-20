@@ -26,4 +26,9 @@ public class ContatoView extends FormPadrao {
     public void createTable() {
         
     }
+    
+    @Override
+    public void consultaView() {
+       
+    }
 }

@@ -3,6 +3,9 @@ package com.diego.agecon.controller;
 import com.diego.agecon.model.TipoContatoModel;
 import com.diego.agecon.dao.TipoContatoDAO;
 import com.diego.agecon.interfaces.InterfaceController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TipoContatoController implements InterfaceController{
 
@@ -30,5 +33,15 @@ public class TipoContatoController implements InterfaceController{
     public void loadComboBox() {
         
     }
+
+    @Override
+    public void consultController(Object... valor) {
+        try {
+            dao.consultarDao(valor);
+        } catch (SQLException e) {
+            Logger.getLogger(TipoContatoController.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+    
     
 }

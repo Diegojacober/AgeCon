@@ -1,7 +1,6 @@
 package com.diego.agecon.view;
 
 import com.diego.agecon.controller.TipoContatoController;
-import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 
 public class TipoContatoView extends FormPadrao {
@@ -10,6 +9,7 @@ public class TipoContatoView extends FormPadrao {
     
     public TipoContatoView() {
         setTitle("Cadastro de tipos de contato");
+        consultaView();
     }
     
     @Override
@@ -31,5 +31,11 @@ public class TipoContatoView extends FormPadrao {
         );
         
         model = (DefaultTableModel) table.getModel();
+    }
+
+    @Override
+    public void consultaView() {
+       model.setNumRows(0);
+       controller.consultController(jtfConsulta.getText(), model);
     }
 }

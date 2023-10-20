@@ -3,14 +3,17 @@ package com.diego.agecon.dao;
 import com.diego.agecon.model.TipoContatoModel;
 import com.diego.agecon.interfaces.InterfaceDAO;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class TipoContatoDAO implements InterfaceDAO{
     
     String sql;
     PreparedStatement stmt;
+    ResultSet result;
     
     @Override
     public void salvarDao(Object... valor) {
@@ -45,7 +48,26 @@ public class TipoContatoDAO implements InterfaceDAO{
 
     @Override
     public void consultarDao(Object... valor) throws SQLException {
+        DefaultTableModel table = (DefaultTableModel) valor[1];
+        sql = "SELECT * FROM tipo_contato";
         
+        try {
+            stmt = DBConnection.openConnection().prepareStatement(sql);
+            result = stmt.executeQuery();
+            
+            while (result.next()) {
+                table.addRow(
+                  new Object[] {
+                      result.getInt("id_tipo_contato"),
+                      result.getString("descricao")
+                  }
+                );
+            }
+            
+            stmt.close();
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+        }
     }
 
     @Override

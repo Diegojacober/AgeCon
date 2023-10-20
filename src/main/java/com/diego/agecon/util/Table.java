@@ -25,7 +25,7 @@ public class Table {
      
         table.setFont(new Font("Arial", Font.BOLD, 16));
         JScrollPane jsp = new JScrollPane(table);
-        table.setRowHeight(50);
+        table.setRowHeight(25);
         jsp.setBounds(10, 40, 785, 300);
         jsp.setVisible(true);
         jpn.add(jsp);

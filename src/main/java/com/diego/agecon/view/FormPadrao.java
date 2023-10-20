@@ -14,6 +14,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     abstract public void inicializarComponents();
     abstract public void salvarView();
     abstract public void createTable();
+    abstract public void consultaView();
     
     JLabel jlConsulta;
     JTextField jtfConsulta;
